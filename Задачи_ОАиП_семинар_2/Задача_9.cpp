@@ -9,7 +9,7 @@ int main()
         std::cin>>number;
         for (int i = 1; i <= number; i++)
         {
-            if (i%2 == 0 or i%5 == 0)
+            if (i%2 == 0 || i%5 == 0)
             {
                 sum += i;
             }

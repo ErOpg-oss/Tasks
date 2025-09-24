@@ -12,7 +12,7 @@ int main()
    }
    else if (number < 0)
    {
-    std::cout<<"Отрицательное чсло"<<std::endl;
+    std::cout<<"Отрицательное число"<<std::endl;
    }
    else
    {

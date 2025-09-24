@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cctype>
 
-bool isVowel(char c) {
+bool check(char c) {
     switch (tolower(c)) {
         case 'a': case 'e': case 'i': case 'u': case 'o': case 'y':
             return true;
@@ -11,13 +11,17 @@ bool isVowel(char c) {
 }
 
 int main() {
+    std::cout<<"Пользователь вводит строку (через цикл по символам). Программа подсчитывает количество гласных букв. Алфавит – латиница.";
     char input;
     std::cout << "Введите символ: ";
     std::cin >> input;
 
-    if (isVowel(input)) {
+    if (check(input)) 
+    {
         std::cout << "'" << input << "' — гласная буква." << std::endl;
-    } else {
+    } 
+    else
+    {
         std::cout << "'" << input << "' — не гласная буква." << std::endl;
     }
 
