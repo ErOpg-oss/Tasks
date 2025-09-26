@@ -1,29 +1,19 @@
 #include <iostream>
-#include <cctype>
-
-bool check(char c) {
-    switch (tolower(c)) {
-        case 'a': case 'e': case 'i': case 'u': case 'o': case 'y':
-            return true;
-        default:
-            return false;
-    }
-}
+#include <string>
 
 int main() {
-    std::cout<<"Пользователь вводит строку (через цикл по символам). Программа подсчитывает количество гласных букв. Алфавит – латиница.";
-    char input;
-    std::cout << "Введите символ: ";
-    std::cin >> input;
+    std::string s;
+    std::getline(std::cin, s);
 
-    if (check(input)) 
-    {
-        std::cout << "'" << input << "' — гласная буква." << std::endl;
-    } 
-    else
-    {
-        std::cout << "'" << input << "' — не гласная буква." << std::endl;
+    std::string vowels = "aeiouAEIOU";
+    int count = 0;
+
+    for (char ch : s) {
+        if (vowels.find(ch) != std::string::npos) {
+            count++;
+        }
     }
 
+    std::cout << count;
     return 0;
 }
