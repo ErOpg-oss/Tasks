@@ -1,10 +1,11 @@
 #include <iostream>
-#include <algorithm> // Для std::swap (хотя можно обойтись и без неё)
+#include <algorithm>
 
 int main() {
     const int n = 15;
     double arr[n];
     std::cout << "Дан массив из 15 вещественных чисел. Если максимальный элемент массива предшествует минимальному элементу, то подсчитать произведение минимального и максимального элементов.";
+    
     for (int i = 0; i < n; i++) {
         std::cin >> arr[i];
     }
@@ -20,8 +21,13 @@ int main() {
         }
     }
 
+    if (maxPos < minPos) {
+        double product = arr[minPos] * arr[maxPos];
+        std::cout << "Произведение: " << product << std::endl;
+    }
 
     std::swap(arr[0], arr[minPos]);
+    if (maxPos == 0) maxPos = minPos;
     std::swap(arr[n - 1], arr[maxPos]);
 
     for (int i = 0; i < n; i++) {

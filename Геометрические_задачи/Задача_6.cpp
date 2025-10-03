@@ -5,9 +5,9 @@
 int rotate(int x1, int y1, int x2, int y2, int x3, int y3) {
     int opr = (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
     if (opr > 0) return 1;   
-    if (opr < 0) return -1;              
+    if (opr < 0) return -1;
+    return 0;
 }
-
 
 bool naotrezke(int x1, int y1, int qx, int qy, int x2, int y2) {
     return ( (x1 <= qx && qx <= x2) || (x2 <= qx && qx <= x1) ) && ( (y1 <= qy && qy <= y2) || (y2 <= qy && qy <= y1) );
@@ -27,18 +27,22 @@ bool perecex(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4) {
 
     return false;
 }
-int main() {
-    double x1, y1, x2, y2; 
-    double x3, y3, x4, y4; 
 
-    std::cout << "Программа проверяет пересечение двух отрезков на плоскости.\n"<<"Введите координаты двух точек x y";
-    std::cout << "Отрезок АВ: ";
+int main() {
+    int x1, y1, x2, y2; 
+    int x3, y3, x4, y4; 
+
+    std::cout << "Программа проверяет пересечение двух отрезков на плоскости.\n";
+    std::cout << "Введите координаты первого отрезка (A и B):\n";
+    std::cout << "Точка A: ";
     std::cin >> x1 >> y1;
+    std::cout << "Точка B: ";
     std::cin >> x2 >> y2;
 
     std::cout << "Введите координаты второго отрезка (C и D):\n";
-    std::cout << "Точка CD: ";
+    std::cout << "Точка C: ";
     std::cin >> x3 >> y3;
+    std::cout << "Точка D: ";
     std::cin >> x4 >> y4;
 
     if (perecex(x1, y1, x2, y2, x3, y3, x4, y4)) {
